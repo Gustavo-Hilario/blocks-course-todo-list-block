@@ -18,4 +18,13 @@
 			}
 		}
 	}
+
+	.addtodo-form {
+		display: flex;
+		margin-top: 30px;
+
+		input {
+			height: 36px;
+		}
+	}
 }
