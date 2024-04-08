@@ -1,8 +1,8 @@
 {
-	"name": "boilerplate",
+	"name": "todo-list",
 	"version": "0.1.0",
-	"description": "Example block scaffolded with Create Block tool.",
-	"author": "The WordPress Contributors",
+	"description": "A simple todo list block",
+	"author": "Gustavo Hilario",
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
 	"scripts": {
@@ -20,7 +20,10 @@
 		"extends": "@wordpress/stylelint-config/scss"
 	},
 	"lint-staged": {
-		"*.js": ["wp-scripts lint-js", "wp-scripts format"],
+		"*.js": [
+			"wp-scripts lint-js",
+			"wp-scripts format"
+		],
 		"*.scss": "wp-scripts lint-style"
 	},
 	"devDependencies": {
@@ -31,5 +34,10 @@
 		"eslint-config-prettier": "^8.8.0",
 		"husky": "^8.0.3",
 		"lint-staged": "^13.2.3"
+	},
+	"dependencies": {
+		"@wordpress/components": "^27.3.0",
+		"@wordpress/data": "^9.25.0",
+		"@wordpress/i18n": "^4.55.0"
 	}
 }

@@ -1,4 +1,21 @@
-.wp-block-create-block-boilerplate {
-	border: 1px dotted rgb(1, 1, 1);
-	color: rgb(255, 132, 142);
+.wp-block-create-block-todo-list {
+
+	ul {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+
+		li {
+			margin-bottom: 15px;
+
+			&.todo-completed {
+				opacity: 0.5;
+				text-decoration: line-through;
+			}
+
+			label {
+				font-size: 16px;
+			}
+		}
+	}
 }

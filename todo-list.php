@@ -1,14 +1,14 @@
 <?php
 /**
- * Plugin Name:       Boilerplate
- * Description:       Example block scaffolded with Create Block tool.
+ * Plugin Name:       Todo List
+ * Description:       A simple todo list block
  * Requires at least: 6.1
  * Requires PHP:      7.0
  * Version:           0.1.0
- * Author:            The WordPress Contributors
+ * Author:            Gustavo Hilario
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       boilerplate
+ * Text Domain:       todo-list
  *
  * @package           create-block
  */
