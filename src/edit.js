@@ -16,6 +16,7 @@ export default function Edit() {
 
 	const actions = useDispatch( 'blocks-course/todos' );
 	const addTodo = actions && actions.addTodo;
+	const toggleTodo = actions && actions.toggleTodo;
 
 	return (
 		<div { ...useBlockProps() }>
@@ -30,7 +31,7 @@ export default function Edit() {
 			{ todos && (
 				<>
 					<ul>
-						{ todos.map( ( todo ) => {
+						{ todos.map( ( todo, index ) => {
 							return (
 								<li
 									key={ todo.id }
@@ -39,11 +40,13 @@ export default function Edit() {
 									}
 								>
 									<CheckboxControl
+										disable={ todo.loading }
 										label={ todo.title }
 										checked={ todo.completed }
-										onChange={ ( value ) => {
-											// eslint-disable-next-line no-console
-											console.log( value );
+										onChange={ () => {
+											if ( toggleTodo ) {
+												toggleTodo( todo, index );
+											}
 										} }
 									/>
 								</li>
