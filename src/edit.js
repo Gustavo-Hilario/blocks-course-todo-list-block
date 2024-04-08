@@ -7,6 +7,7 @@ import './editor.scss';
 
 export default function Edit() {
 	const [ newTodo, setNewTodo ] = useState( '' );
+	const [ addingTodo, setAddingTodo ] = useState( false );
 
 	const todos = useSelect( ( select ) => {
 		const todosStore = select( 'blocks-course/todos' );
@@ -51,11 +52,13 @@ export default function Edit() {
 					</ul>
 					<form
 						className="addtodo-form"
-						onSubmit={ ( ev ) => {
+						onSubmit={ async ( ev ) => {
 							ev.preventDefault();
-							if ( addTodo ) {
-								addTodo( { title: newTodo, completed: false } );
+							if ( addTodo && newTodo ) {
+								setAddingTodo( true );
+								await addTodo( newTodo );
 								setNewTodo( '' );
+								setAddingTodo( false );
 							}
 						} }
 					>
@@ -63,7 +66,7 @@ export default function Edit() {
 							value={ newTodo }
 							onChange={ ( value ) => setNewTodo( value ) }
 						/>
-						<Button type="submit" isPrimary>
+						<Button disabled={ addingTodo } type="submit" isPrimary>
 							{ ' ' }
 							{ __( 'Add Todo', 'todo-list' ) }{ ' ' }
 						</Button>
